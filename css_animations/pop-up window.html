@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>animated Pop up window</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <div class="wrapper">
+        <button id="myBtn">click me!!</button>
+            </div>
+        <div id="popUp">
+            
+            <div class="inner">
+                <button class="closebtn" onclick="">x</button>
+                    <div class="display_content">    
+                        <p>Write something in here</p>
+                        <input type="text" placeholder="Write..">
+                        <button></button>
+                    </div>
+                
+            </div>
+        </div>
+        
+        <script>
+            var modal=document.getElementById("popUp");
+            
+            var btn=document.getElementById("myBtn");
+            
+            var Content=document.getElementsByClassName("inner")[0];
+            
+            var close=document.getElementsByClassName("closebtn")[0];
+            btn.onclick= function(){
+                modal.style.display="block";
+            }
+            close.onclick=function(){
+                Content.style.animation="tilt 1.8s ease forwards, slopeDown 2s 1.5s ease forwards";
+            }
+            window.onclick=function(event){
+                if(event.target==modal){
+                    modal.style.display="none";
+                }
+            }
+            
+            
+        </script>
+    </body>
+
+</html>
